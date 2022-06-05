@@ -1,0 +1,1 @@
+// TO:DO -- Write functions for user Thoughts
