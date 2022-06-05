@@ -1,1 +1,1 @@
-// TO:DO -- Write functions for users/].
+// TO:DO -- Write functions for users.
