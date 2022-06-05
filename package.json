@@ -1,6 +1,7 @@
 {
-    "name": "SocialNetwork-API",
+    "name": "socialnetwork-api",
     "version": "1.0.0",
+    "description": "MongoDB API for a social network.",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
