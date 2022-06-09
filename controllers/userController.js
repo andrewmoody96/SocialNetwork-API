@@ -3,7 +3,7 @@ const { ObjectId } = require("mongoose").Types;
 const { User, Thought } = require("../models");
 
 const thoughts = async (userId) => {
-  let usersThoughts = await User.aggregate([
+  let userThoughts = await User.aggregate([
     {
       $match: { _id: ObjectId(userId) },
     },
@@ -16,7 +16,7 @@ const thoughts = async (userId) => {
       },
     },
   ]);
-  return usersThoughts;
+  return userThoughts;
 };
 const friends = async (userId) => {
   let usersFriends = await User.aggregate([
@@ -122,7 +122,7 @@ module.exports = {
     console.log("Delete friend.");
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $pull: { friends: { _id: req.params.friendId } } },
+      { $pull: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     )
       .then((user) =>
