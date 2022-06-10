@@ -33,6 +33,7 @@ thoughtSchema.virtual("reactionCounter").get(function () {
   return `${this.reactions.length}`;
 });
 thoughtSchema.virtual("dateFormat").get(function () {
+  // TODO -- Error is here. "getFullYear" is undefined.
   let formattedDate = `${this.createdAt.getFullYear()}-`;
   formattedDate += `${`0${this.createdAt.getMonth() + 1}`.slice(-2)}-`;
   formattedDate += `${`0${this.createdAt.getDate()}`.slice(-2)}`;
