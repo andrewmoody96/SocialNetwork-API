@@ -53,14 +53,13 @@ module.exports = {
   },
   // Update a thought
   updateThought(req, res) {
-    console.log("update thought");
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $set: req.body },
       { runValidators: true, new: true }
     )
       .then((thought) =>
-        !thought``
+        !thought
           ? res.status(404).json({ message: "No thought matching this ID." })
           : res.json(thought)
       )
@@ -105,9 +104,10 @@ module.exports = {
   },
   // Remove reaction from thought
   deleteReaction(req, res) {
+    console.log(req.params.reactionId)
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: { reactions: req.params.reactionId } } },
+      { $pull: { reactions: {_id: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
       .then((thought) =>

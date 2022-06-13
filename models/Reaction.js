@@ -1,16 +1,11 @@
 // TO:DO -- Create Reaction model.
-const {
-  Schema,
-  Types,
-  model,
-  Mongoose,
-  default: mongoose,
-} = require("mongoose");
+const { Schema, Types } = require("mongoose");
 
 const reactionSchema = new Schema(
   {
     reactionId: {
-      objectId: new mongoose.Schema.Types.ObjectId(),
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
     },
     reactionBody: {
       type: String,
@@ -35,12 +30,5 @@ const reactionSchema = new Schema(
     id: false,
   }
 );
-
-reactionSchema.get(function () {
-  let formattedDate = `${this.createdAt.getFullYear()}-`;
-  formattedDate += `${`0${this.createdAt.getMonth() + 1}`.slice(-2)}-`;
-  formattedDate += `${`0${this.createdAt.getDate()}`.slice(-2)}`;
-  return formattedDate;
-});
 
 module.exports = reactionSchema;
