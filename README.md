@@ -25,6 +25,8 @@ npm i
 
 Using Insomnia, users are able to create, update, and delete users and thoughts. They are also able to react to thoughts and add friends.
 
+Click [here](https://drive.google.com/file/d/1DBDrKJrm3CKKf7Xkr5pOyXbrdySqYeFu/view?usp=sharing) for a video demonstration in Insomnia.
+
 ---
 ## Contributing
 
