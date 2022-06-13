@@ -1,4 +1,3 @@
-// TO:DO -- Write functions for user Thoughts
 const { ObjectId } = require("mongoose").Types;
 const { User, Thought } = require("../models");
 
@@ -88,7 +87,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  //add reaction to thought
+  //add reaction
   addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -102,12 +101,12 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Remove reaction from thought
+  // Remove reaction
   deleteReaction(req, res) {
-    console.log(req.params.reactionId)
+    console.log(req.params.reactionId);
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: {_id: req.params.reactionId } } },
+      { $pull: { reactions: { _id: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
       .then((thought) =>

@@ -1,4 +1,3 @@
-// TO:DO -- Write functions for users.
 const { ObjectId } = require("mongoose").Types;
 const { User, Thought } = require("../models");
 
@@ -101,7 +100,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  // Add a friend to a user
+  // Add a friend
   addFriend(req, res) {
     console.log("Adding friend.");
     console.log(req.body);
@@ -117,7 +116,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Remove friend from user
+  // Remove friend
   deleteFriend(req, res) {
     console.log("Delete friend.");
     User.findOneAndUpdate(

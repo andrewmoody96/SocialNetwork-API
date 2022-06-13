@@ -1,4 +1,3 @@
-// TO:DO -- Create User model.
 const { Schema, model } = require("mongoose");
 
 let validateEmail = function (email) {
